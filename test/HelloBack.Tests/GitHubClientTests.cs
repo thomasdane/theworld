@@ -16,9 +16,11 @@ namespace HelloBack.Tests
 
             //Act
             var actual = await gitHubClient.GetData();
+            var content = await actual.Content.ReadAsStringAsync();
 
             //Assert
             Assert.Equal(expected, actual.StatusCode);
+            Assert.NotEmpty(content);
         }
     }
 }
