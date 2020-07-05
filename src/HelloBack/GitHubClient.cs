@@ -1,21 +1,36 @@
-﻿using System.Net.Http;
+﻿using System;
+using System.IO;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace HelloBack
 {
     public class GitHubClient
     {
-        private readonly IHttpClientFactory _httpClientFactory;
+        private readonly HttpClient Client;
 
-        public GitHubClient(IHttpClientFactory httpClientFactory)
+        public GitHubClient(HttpClient client)
         {
-            _httpClientFactory = httpClientFactory;
+            client.BaseAddress = new Uri("https://api.github.com/");
+
+            // GitHub API versioning
+            client.DefaultRequestHeaders.Add("Accept", "application/vnd.github.v3+json");
+
+            // GitHub requires a user-agent
+            client.DefaultRequestHeaders.Add("User-Agent", "HttpClientFactory-Sample");
+
+            Client = client;
         }
 
-        public string GetData()
+        public async Task<string> GetData()
         {
-            var httpClient = _httpClientFactory.CreateClient();
+            var token = ReadToken();
+            return "foo";
+        }
 
-            return foo;
+        private async Task<string> ReadToken()
+        {
+            return await File.ReadAllTextAsync("token.txt");
         }
     }
 }

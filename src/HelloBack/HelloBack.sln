@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29424.173
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloBack", "HelloBack.csproj", "{F52BF55E-CADB-4301-86C2-B2D140D01194}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloBack.Tests", "..\..\test\HelloBack.Tests\HelloBack.Tests.csproj", "{EF5A9CE7-9DCA-4F27-9369-418EAF6311BA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F52BF55E-CADB-4301-86C2-B2D140D01194}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F52BF55E-CADB-4301-86C2-B2D140D01194}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F52BF55E-CADB-4301-86C2-B2D140D01194}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F52BF55E-CADB-4301-86C2-B2D140D01194}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF5A9CE7-9DCA-4F27-9369-418EAF6311BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF5A9CE7-9DCA-4F27-9369-418EAF6311BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF5A9CE7-9DCA-4F27-9369-418EAF6311BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF5A9CE7-9DCA-4F27-9369-418EAF6311BA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3BF99C63-0433-4751-B426-20409E7C1F7C}
+	EndGlobalSection
+EndGlobal
