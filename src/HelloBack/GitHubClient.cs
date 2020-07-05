@@ -12,20 +12,16 @@ namespace HelloBack
         public GitHubClient(HttpClient client)
         {
             client.BaseAddress = new Uri("https://api.github.com/");
-
-            // GitHub API versioning
             client.DefaultRequestHeaders.Add("Accept", "application/vnd.github.v3+json");
-
-            // GitHub requires a user-agent
             client.DefaultRequestHeaders.Add("User-Agent", "HttpClientFactory-Sample");
-
             Client = client;
         }
 
-        public async Task<string> GetData()
+        public async Task<HttpResponseMessage> GetData()
         {
             var token = ReadToken();
-            return "foo";
+            var url = "/search/code?q=addClass+in:file+language:js+repo:jquery/jquery";
+            return await Client.GetAsync(url);
         }
 
         private async Task<string> ReadToken()

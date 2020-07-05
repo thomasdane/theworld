@@ -1,13 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 using Xunit;
-using Amazon.Lambda.Core;
-using Amazon.Lambda.TestUtilities;
-
-using HelloBack;
 
 namespace HelloBack.Tests
 {
@@ -16,13 +7,15 @@ namespace HelloBack.Tests
         [Fact]
         public void TestToUpperFunction()
         {
+            //Arrange
+            var expected = "hello world";
 
-            // Invoke the lambda function and confirm the string was upper cased.
+            //Act
             var function = new Function();
-            var context = new TestLambdaContext();
-            var upperCase = function.FunctionHandler("hello world", context);
+            var actual = function.FunctionHandler();
 
-            Assert.Equal("HELLO WORLD", upperCase);
+            //Assert
+            Assert.Equal(expected, actual);
         }
     }
 }
